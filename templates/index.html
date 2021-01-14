@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} bilibili {% endblock %}
+
+{% block tvname %} {{tv.name}}  {% endblock %}
+{% block menu %}
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="{%  url 'tv-url' 0%}">bilibili0</a></li>
+        <li><a href="{%  url 'tv-url' 1%}">bilibili1</a></li>
+    </ul>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div id="tvcode" align="center">
+            <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid={{tv.tvcode}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+{% endblock %}
